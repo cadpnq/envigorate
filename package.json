@@ -1,0 +1,51 @@
+{
+  "name": "envigorate",
+  "version": "0.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*.js",
+    "dist/**/*.d.ts"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "coverage": "nyc mocha",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "prepare": "husky install",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cadpnq/envigorate.git"
+  },
+  "author": "Nicky Nickell <nicky.nickell@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cadpnq/envigorate/issues"
+  },
+  "homepage": "https://github.com/cadpnq/envigorate#readme",
+  "devDependencies": {
+    "@istanbuljs/nyc-config-typescript": "^1.0.1",
+    "@types/chai": "^4.2.21",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^16.4.13",
+    "@typescript-eslint/eslint-plugin": "^4.29.1",
+    "@typescript-eslint/parser": "^4.29.1",
+    "chai": "^4.3.4",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "husky": "^7.0.1",
+    "lint-staged": "^11.1.2",
+    "mocha": "^9.0.3",
+    "nyc": "^15.1.0",
+    "prettier": "^2.3.2",
+    "source-map-support": "^0.5.19",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "deep-copy-ts": "^0.5.0"
+  }
+}

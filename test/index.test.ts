@@ -18,7 +18,20 @@ describe('#envigorate()', function () {
     }).to.throw(EnvigorateMissingVariableError);
   });
 
-  it('should include missing variables in the error', function () {
+  it('should include missing variables in the error', function (done) {
+    const config = { foo: { bar: '${{ TEST }}' } };
+    const env = {};
+
+    try {
+      envigorate(config, env);
+    } catch (error) {
+      expect(error).to.be.instanceOf(EnvigorateMissingVariableError);
+      expect(error.variables).to.deep.equal(['TEST']);
+      done();
+    }
+  });
+
+  it('should include missing variables from nested objects in the error', function () {
     const config = { foo: '${{ TEST }}' };
     const env = {};
 

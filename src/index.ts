@@ -26,7 +26,12 @@ function doEnvigorate(
   for (const [key, value] of Object.entries(config)) {
     switch (typeof value) {
       case 'object':
-        doEnvigorate(value as Record<string, unknown>, env, false);
+        doEnvigorate(
+          value as Record<string, unknown>,
+          env,
+          false,
+          missingVariables
+        );
         break;
       case 'string': {
         const match = /\$\s*{\s*{\s*(\S+)\s*}\s*}/.exec(value);
